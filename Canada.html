@@ -57,13 +57,13 @@
 		  }
         });
 
-		const view = new MapView({
-			map: webmap,
-			container: "viewDiv"
-		});
+	const view = new MapView({
+		map: webmap,
+		container: "viewDiv"
+	});
 		
-		const legend = new Legend ({
-        view: view
+	const legend = new Legend ({
+        view: view,
 		layerInfos: [
               {
                 layer: featureLayer,
