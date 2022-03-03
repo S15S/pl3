@@ -48,7 +48,9 @@
             "esri/widgets/Legend",
             "esri/widgets/LayerList"], function (esriConfig,Map, MapView,WebMap,Graphic,GraphicsLayer,Legend,LayerList) {
 
-//created a new api key for this map, as the one for last weeks checklist items was no longer working.
+//created a new api key for this map, as the one for last weeks checklist items was no longer working
+// not sure why the api isn't working, there is no referrer on it
+	       
        esriConfig.apiKey = "AAPK2ac063d0d3a948f5884c680e842f0bbayfyXhLfmzfhkawtNEDePHTekQQjk2BPGn9Y3deSsAc2-nxdv2m_zl1KXSzpK_G4Z";
 
         const webmap = new WebMap({
