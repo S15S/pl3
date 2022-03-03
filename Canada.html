@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Canada's Provinces!</title>
+
+    <style>
+      html,
+      body,
+      #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 60%;
+        width: 60%;
+      }
+	  .title {
+	  text-align: center;
+	  font-family: Arial, Helvetica, sans-serif;
+	  font-weight: bold;
+	  backgroun-color: MediumSeaGreen;
+	  color: white 
+	  }
+	  
+	  .sub {
+	  text-align: center;
+	  font-family: Arial, Helvetica, sans-serif;
+	  backgroun-color: MediumSeaGreen;
+	  color: white
+	  }
+	  
+    </style>
+
+    <link rel="stylesheet" href="https://js.arcgis.com/4.22/esri/themes/light/main.css">
+    <script src="https://js.arcgis.com/4.22/"></script>
+
+    <script>
+	// this was designed based off of https://developers.arcgis.com/javascript/latest/display-a-web-map/
+	
+       require([
+            "esri/config",
+            "esri/Map", 
+            "esri/views/MapView",
+            "esri/WebMap",
+            "esri/Graphic",
+            "esri/layers/GraphicsLayer",
+            "esri/widgets/Legend",
+            "esri/widgets/LayerList"], function (esriConfig,Map, MapView,WebMap,Graphic,GraphicsLayer,Legend,LayerList) {
+
+
+        esriConfig.apiKey ="AAPK4e2406b02ca544c3a0537a375e59450eBGCyAJxZdYFN69kqzxi7OFhJsmSEytuit2F8cUGiHd-XK-WdyTGqmWXzsvbqKBi3";
+
+        const webmap = new WebMap({
+          portalItem: {
+		  id: "c1d985bbfd914b22a99124024579e5c2"
+		  }
+        });
+
+		const view = new MapView({
+			map: webmap,
+			container: "viewDiv"
+		});
+		
+		const legend = new Legend ({
+        view: view
+		layerInfos: [
+              {
+                layer: featureLayer,
+                title: "Province Names"
+              }
+            ]
+      });
+      view.ui.add(legend, "bottom-left");
+	  
+	  
+    </script>
+
+  </head>
+  <body>
+    <div id="viewDiv"></div>
+  </body>
+</html>
+        
+  </head>
+  <body>
+	<h1 class = title> Let's Learn Canada's Provinces!</h1>
+	<h2 class = sub> Use this map to explore Canada and learn the Provinces and Territories! Explore by zooming in and out</h2>
+	
+    <div id="viewDiv"></div>
+  </body>
+</html>
